@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Detection App</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#weatherMessage {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Detection App</h1>
+        <div class="input-group">
+            <input type="text" id="weatherInput" placeholder="Enter weather condition">
+            <button id="checkWeather">Check Weather</button>
+        </div>
+        <p id="weatherMessage"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const weatherInput = document.getElementById('weatherInput');
+    const checkWeatherButton = document.getElementById('checkWeather');
+    const weatherMessage = document.getElementById('weatherMessage');
+
+    checkWeatherButton.addEventListener('click', () => {
+        const weather = weatherInput.value.toLowerCase().trim();
+        let message = '';
+
+        if (weather === 'sunny') {
+            message = "It's sunny! Wear sunglasses and apply sunscreen.";
+        } else if (weather === 'rainy') {
+            message = "It's rainy! Don't forget your umbrella.";
+        } else if (weather === 'cloudy') {
+            message = "It's cloudy! You might want to carry a light jacket.";
+        } else if (weather === 'snowy') {
+            message = "It's snowy! Dress warmly and stay safe.";
+        } else {
+            message = "Sorry, I don't recognize that weather condition.";
+        }
+
+        weatherMessage.textContent = message;
+    });
+
+    // Allow Enter key to trigger the weather check
+    weatherInput.addEventListener('keyup', (event) => {
+        if (event.key === 'Enter') {
+            checkWeatherButton.click();
+        }
+    });
+});
+
+
+    </script>
+</body>
+</html>
+

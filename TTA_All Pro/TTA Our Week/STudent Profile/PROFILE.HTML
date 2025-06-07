@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="darkModeToggle" class="darkModeToggle">Toggle Dark Mode</button>
+    
+<script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    darkModeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        // Save the user's preference
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
+
+    // Check for saved user preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+</script>
+    <div class="container">
+        <h1>Student Profiles</h1>
+        
+        <div class="profiles">
+            <div class="profile">
+                <div class="profile-image"><img class="profile-image" src="src/44096351-LRG_530x.webp" alt=""></div>
+                <span class="profile-name">Uwimana Ange</span>
+                <button class="view-more" onclick="showDetails('uwimana')">View More</button>
+            </div>
+
+            <div class="profile">
+                <div class="profile-image"><img class="profile-image" src="src/671ffb924cdb9c1818e2724c_100.png" alt=""></div>
+                <span class="profile-name">Uwase Alice</span>
+                <button class="view-more" onclick="showDetails('uwase')">View More</button>
+            </div>
+
+            <div class="profile">
+                <div class="profile-image"><img class="profile-image" src="src/sunglasses-emoticon-big-smile-emoji-toothy-wearing-black-165476303.webp" alt=""></div>
+                <span class="profile-name">Ngabo A</span>
+                <button class="view-more" onclick="showDetails('ngabo')">View More</button>
+            </div>
+        </div>
+
+        <div id="uwimanaDetails" class="details-card">
+            <div class="details-row">
+                <img class="profile-image" src="src/44096351-LRG_530x.webp" alt="">
+            </div>
+            <div class="details-row">
+                <strong>Name:</strong> Uwimana Ange
+            </div>
+            <div class="details-row">
+                <strong>Age:</strong> 25
+            </div>
+            <div class="details-row">
+                <strong>Nationality:</strong> Rwandan
+            </div>
+            <div class="details-row">
+                <strong>Email:</strong> uwimana.ange@example.com
+            </div>
+            <div class="details-row">
+                <strong>Phone:</strong> 07845550998
+            </div>
+        </div>
+
+        <div id="uwaseDetails" class="details-card">
+            <div class="details-row">
+                <img class="profile-image" src="src/671ffb924cdb9c1818e2724c_100.png" alt="">
+            </div>
+            <div class="details-row">
+                <strong>Name:</strong> Uwase Alice
+            </div>
+            <div class="details-row">
+                <strong>Age:</strong> 23
+            </div>
+            <div class="details-row">
+                <strong>Nationality:</strong> Rwandan
+            </div>
+            <div class="details-row">
+                <strong>Email:</strong> uwase.alice@example.com
+            </div>
+            <div class="details-row">
+                <strong>Phone:</strong> 07845550999
+            </div>
+        </div>
+
+        <div id="ngaboDetails" class="details-card">
+            <div class="details-row">
+                <img class="profile-image" src="src/sunglasses-emoticon-big-smile-emoji-toothy-wearing-black-165476303.webp" alt="">
+            </div>
+            <div class="details-row">
+                <strong>Name:</strong> Ngabo Alex
+            </div>
+            <div class="details-row">
+                <strong>Age:</strong> 24
+            </div>
+            <div class="details-row">
+                <strong>Nationality:</strong> Rwandan
+            </div>
+            <div class="details-row">
+                <strong>Email:</strong> ngabo.alex@example.com
+            </div>
+            <div class="details-row">
+                <strong>Phone:</strong> 07845550997
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showDetails(student) {
+            // Hide all detail cards
+            const cards = document.querySelectorAll('.details-card');
+            cards.forEach(card => card.classList.remove('active'));
+            
+            // Show selected student's details
+            const selectedCard = document.getElementById(`${student}Details`);
+            selectedCard.classList.add('active');
+        }
+    </script>
+    
+</body>
+</html>

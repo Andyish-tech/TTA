@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    /* flex-direction: row; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+    flex-direction: row-reverse;
+}
+
+.container-2{
+    display: flex;
+    justify-content: center;
+}
+
+.container-3{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+.content{
+    border: 1px solid blue;
+    margin: 5px 20px;
+    width: 30%;
+    padding: 0px 5px ;
+}

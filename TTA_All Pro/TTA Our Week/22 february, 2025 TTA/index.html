@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Notes App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    :root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f5f5;
+    --text-color: #333;
+    --light-text: #777;
+    --delete-color: #e74c3c;
+    --edit-color: #2ecc71;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+#note-form {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#note-form:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#note-form input,
+#note-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#note-form input:focus,
+#note-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#note-form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#note-form button:hover {
+    background: #3a7bd5;
+}
+
+.note {
+    background: #fff;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.note:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.note h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+.note p {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.note button {
+    background: var(--delete-color);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease;
+}
+
+.note button.edit {
+    background: var(--edit-color);
+}
+
+.note button:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+    
+    #note-form,
+    .note {
+        padding: 1rem;
+    }
+}
+
+/* Add some animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.note {
+    animation: fadeIn 0.5s ease-out;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Personal Notes App</h1>
+        <form id="note-form">
+            <input type="text" id="title" placeholder="Title" required>
+            <textarea id="description" placeholder="Description" required></textarea>
+            <button type="submit" id="submit-btn">Add Note</button>
+        </form>
+        <div id="notes-list"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const noteForm = document.getElementById('note-form');
+    const notesList = document.getElementById('notes-list');
+    const titleInput = document.getElementById('title');
+    const descriptionInput = document.getElementById('description');
+    const submitBtn = document.getElementById('submit-btn');
+    let notes = JSON.parse(localStorage.getItem('notes')) || [];
+    let editingId = null;
+
+    function renderNotes() {
+        notesList.innerHTML = '';
+        notes.forEach((note, index) => {
+            const noteElement = document.createElement('div');
+            noteElement.classList.add('note');
+            noteElement.innerHTML = `
+                <h3>${note.title}</h3>
+                <p>${note.description}</p>
+                <div class="note-actions">
+                    <button class="edit" data-id="${index}">Edit</button>
+                    <button class="delete" data-id="${index}">Delete</button>
+                </div>
+            `;
+            notesList.appendChild(noteElement);
+        });
+    }
+
+    function saveNotes() {
+        localStorage.setItem('notes', JSON.stringify(notes));
+        renderNotes();
+    }
+
+    noteForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const title = titleInput.value.trim();
+        const description = descriptionInput.value.trim();
+        
+        if (title && description) {
+            if (editingId !== null) {
+                notes[editingId] = { title, description };
+                editingId = null;
+                submitBtn.textContent = 'Add Note';
+            } else {
+                notes.push({ title, description });
+            }
+            saveNotes();
+            titleInput.value = '';
+            descriptionInput.value = '';
+        }
+    });
+
+    notesList.addEventListener('click', (e) => {
+        if (e.target.classList.contains('delete')) {
+            const id = parseInt(e.target.getAttribute('data-id'));
+            notes.splice(id, 1);
+            saveNotes();
+        } else if (e.target.classList.contains('edit')) {
+            const id = parseInt(e.target.getAttribute('data-id'));
+            const noteToEdit = notes[id];
+            titleInput.value = noteToEdit.title;
+            descriptionInput.value = noteToEdit.description;
+            editingId = id;
+            submitBtn.textContent = 'Update Note';
+        }
+    });
+
+    renderNotes();
+});
+    </script>
+</body>
+</html>

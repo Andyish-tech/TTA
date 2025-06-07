@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+   #container {
+    top: 0;
+    margin-top: 150px;
+   }
+   h1{
+    font-size: 3em;
+    font-weight: bolder;
+   }
+   p{
+    color: rgb(115, 115, 115);
+   }
+   #emoji{
+    font-size: 7em;
+    margin: 20px;
+ 
+   }
+   button{
+    padding: 15px 40px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+   }
+
+</style>
+<body>
+   <center>
+    <div Id="container">
+        <h1>Random Face Emoji</h1>
+        <p>Click the Button to see a random emoji face! </p>
+        <p id="emoji">😘</p>
+        <button onclick="showRandomEmoji()">Show Random Emoji</button>
+    </div>
+   </center>
+
+   <script>
+    
+    const emojis = ['😀', '😃', '😄', '😁', '😆', '😅', '😂', '🤣', '😊', '😇'];
+    const emoji = document.getElementById('emoji');
+    function showRandomEmoji(){
+        const randomIndex = Math.floor(Math.random() * emojis.length);
+        emoji.innerHTML = emojis[randomIndex];
+
+    }
+
+   </script>
+</body>
+</html>

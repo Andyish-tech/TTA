@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Basket Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px;
+            font-size: 16px;
+        }
+        #basket {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fruit Basket Counter</h1>
+
+    <label for="fruitInput">Enter a fruit name:</label>
+    <input type="text" id="fruitInput" placeholder="Fruit name">
+    <button onclick="addFruit()">Add Fruit</button>
+
+    <button onclick="removeFruit()">Remove Fruit</button>
+
+    <button onclick="displayTotalFruits()">Display Total Fruits</button>
+
+    <div id="basket"></div>
+
+    <script>
+        // Initialize the basket as an empty array
+        let basket = [];
+
+        // Function to add fruit to the basket
+        function addFruit() {
+            const fruit = document.getElementById('fruitInput').value;
+            if (fruit !== "") {
+                basket.push(fruit);
+                alert(fruit + " has been added to the basket.");
+                document.getElementById('fruitInput').value = "";  // Clear the input field
+                updateBasketDisplay();
+            } else {
+                alert("Please enter a fruit name.");
+            }
+        }
+
+        // Function to remove fruit from the basket
+        function removeFruit() {
+            const fruit = document.getElementById('fruitInput').value;
+            if (fruit !== "") {
+                const index = basket.indexOf(fruit);
+                if (index !== -1) {
+                    basket.splice(index, 1);
+                    alert(fruit + " has been removed from the basket.");
+                } else {
+                    alert(fruit + " is not in the basket.");
+                }
+                document.getElementById('fruitInput').value = "";  // Clear the input field
+                updateBasketDisplay();
+            } else {
+                alert("Please enter a fruit name.");
+            }
+        }
+
+        // Function to display the total number of fruits
+        function displayTotalFruits() {
+            alert("Total number of fruits in the basket: " + basket.length);
+        }
+
+        // Function to update the basket display
+        function updateBasketDisplay() {
+            const basketDiv = document.getElementById('basket');
+            basketDiv.innerHTML = "<strong>Current Fruits in Basket:</strong><br>" + basket.join(", ");
+        }
+    </script>
+
+</body>
+</html>

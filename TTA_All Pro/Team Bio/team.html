@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #DC3545;
+            color: white;
+            padding: 3rem;
+            width: 300px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .building-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar p {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .learn-more {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .credit {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .team-grid {
+            padding: 2rem;
+            display: grid;
+            /* Modified to create exact 2x2 grid */
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 2rem;
+            flex: 1;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 341px;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-title {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-name {
+            color: #DC3545;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #DC3545;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-link:hover {
+            background: #DC3545;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .team-grid {
+                grid-template-columns: 1fr; /* Single column on mobile */
+                grid-template-rows: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <svg class="building-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 8v14h20V8L12 2zm0 2.5L18.5 9H5.5L12 4.5zM4 20V9.5l8 5.5 8-5.5V20H4z"/>
+            </svg>
+            <h1>Our Team</h1>
+            <p>We are a passionate team of developers united by our shared love for technology and innovation. Studying at TechTonic Africa (TTA), we continuously strive to learn, grow, and create impactful solutions together.</p>
+            <a href="#" class="learn-more">Learn More</a>
+            <p class="credit">Images from Freepik</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="Andy.png" alt="Team member" class="member-image">
+                <div class="member-info">
+                    <p class="member-title">creative founder</p>
+                    <h2 class="member-name">Andy Ishimwe</h2>
+                    <p class="member-bio"> The tech enthusiast who thrives on innovation and teamwork.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">ig</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="Gisubizo.png" alt="Team member" class="member-image">
+                <div class="member-info">
+                    <p class="member-title">Developer</p>
+                    <h2 class="member-name">Gisubizo</h2>
+                    <p class="member-bio"> A detail-oriented coder dedicated to producing clean, efficient, and reliable code.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">ig</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="Armand.png" alt="Team member" class="member-image">
+                <div class="member-info">
+                    <p class="member-title">Developer</p>
+                    <h2 class="member-name">Armand Benjamin Rukizangabo</h2>
+                    <p class="member-bio"> A visionary developer with a knack for problem-solving and creativity.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">ig</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="David.png" alt="Team member" class="member-image">
+                <div class="member-info">
+                    <p class="member-title">Developer</p>
+                    <h2 class="member-name">David Kwizera</h2>
+                    <p class="member-bio"> committed programmer with a focus on excellence and collaboration.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class=""></i>F</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">ig</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

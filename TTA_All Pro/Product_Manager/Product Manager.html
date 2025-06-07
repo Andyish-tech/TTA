@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Data Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-4">Product Management</h2>
+        <div class="mb-4">
+            <input type="text" id="productName" class="w-full p-2 border rounded-md" placeholder="Enter product name">
+            <button onclick="addProduct()" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md">Add Product</button>
+        </div>
+        <ul id="productList" class="space-y-2"></ul>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", loadProducts);
+
+        function addProduct() {
+            try {
+                const input = document.getElementById("productName");
+                const productName = input.value.trim();
+                if (!productName) {
+                    alert("Product name cannot be empty.");
+                    return;
+                }
+                
+                let products = JSON.parse(localStorage.getItem("products")) || [];
+                products.push({ name: productName, deleted: false });
+                localStorage.setItem("products", JSON.stringify(products));
+                input.value = "";
+                loadProducts();
+            } catch (error) {
+                console.error("Error adding product:", error);
+            }
+        }
+
+        function loadProducts() {
+            try {
+                const list = document.getElementById("productList");
+                list.innerHTML = "";
+                let products = JSON.parse(localStorage.getItem("products")) || [];
+
+                products.forEach((product, index) => {
+                    const li = document.createElement("li");
+                    li.className = "flex justify-between p-2 border rounded-md";
+                    li.innerHTML = `
+                        <span class="${product.deleted ? 'line-through text-gray-400' : ''}">${product.name}</span>
+                        <button onclick="toggleDelete(${index})" class="text-sm text-red-500">${product.deleted ? 'Restore' : 'Delete'}</button>
+                    `;
+                    list.appendChild(li);
+                });
+            } catch (error) {
+                console.error("Error loading products:", error);
+            }
+        }
+
+        function toggleDelete(index) {
+            try {
+                let products = JSON.parse(localStorage.getItem("products")) || [];
+                products[index].deleted = !products[index].deleted;
+                localStorage.setItem("products", JSON.stringify(products));
+                loadProducts();
+            } catch (error) {
+                console.error("Error toggling delete status:", error);
+            }
+        }
+    </script>
+</body>
+</html>

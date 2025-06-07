@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #191717 0%, #170235 100%);
+    min-height: 100vh;
+    color: #c9bfbf;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #c9bfbf;
+}
+
+.logo-circle {
+    width: 60px;
+    height: 60px;
+    background: url(team-3.jpg);
+    border-radius: 50%;
+}
+
+.logo-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.blog-link {
+    text-decoration: none;
+    color:#c8ffa3;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Main Content */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.content-left {
+    max-width: 500px;
+}
+
+.bio {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px dashed #c8ffa3;
+    padding-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #c8ffa3;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+.profile-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.profile-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1b1940;
+    border-radius: 50%;
+    transform: translate(-20px, 20px);
+}
+
+.profile-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+}
+
+.name-section {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.name {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.subtitle {
+    color: #959292;
+    margin-top: 0.5rem;
+}
+
+
+
+@media (max-width: 1200px) {
+    .main-content {
+        gap: 2rem;
+    }
+
+    .profile-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .name {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .content-left {
+        margin: 0 auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .profile-container {
+        width: 300px;
+        height: 300px;
+        order: -1;
+    }
+
+    .name-section {
+        text-align: center;
+    }
+
+    .bio {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .profile-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .bio {
+        font-size: 1rem;
+    }
+
+    .language-toggle {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}

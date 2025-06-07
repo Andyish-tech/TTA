@@ -1,0 +1,21 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #000000;
+}
+h1{
+    color: #a6e834;
+}
+.book {
+  background: #282828;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.reviews {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #c6d2b2;
+}

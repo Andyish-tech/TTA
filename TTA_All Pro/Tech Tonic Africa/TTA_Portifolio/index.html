@@ -1,0 +1,279 @@
+<html>
+<head>
+    <title>TTA_Portifolio_v1</title>
+    <style>
+    body {
+            background-color: rgb(19, 18, 18);
+            color :white;
+        }
+    
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+       gap: 30px; 
+      top: 0;
+      z-index: 1;
+       height: 30px; 
+      background-color: rgb(19, 19, 19);
+      padding: 30px 30px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      
+    }
+       
+        .container {
+            display: flex;
+            height: 80vh;
+        }
+        .same-margin {
+            margin: auto ;
+        }
+        .div-1 {
+            width: 60%;
+            text-align: justify;
+            padding: 0px 100px 0px 30px;
+        }
+        .div-1 h1 span{
+            color: #7E74F1;
+            font-weight: bolder;
+            font-family: sans-serif;
+        }
+        .div-1 p{
+           
+            color: gray;
+            font-size: 14px;
+        }
+        .div-2 {
+            width:40%;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .div-2 img {
+            border-radius: 5px;
+            top: 50px; 
+            bottom: 30px; 
+        }
+
+        /* this is styling for skills section  */
+        #skills-section{
+            text-align: center;
+        }
+        .skills-container{
+            display: flex;
+            justify-content: center;
+            height: 70vh;
+        }
+        .skills-card{
+            background-color: white;
+            color:black;
+            width: 30%;
+            margin: auto 15px;
+            border-radius: 6px;
+            padding: 80px 3px 30px 3px;
+
+        }
+        .skills-card h2{
+            font-weight: lighter;
+        }
+        .skills-card p{
+            color: gray;
+        }
+
+        /* this is the style for previouse work sectiom */
+        #work-section{
+            text-align: center;
+        }
+        .work-container{
+            display: flex;  
+            color: gray;
+            border-radius: 5px;
+            justify-content: center;
+            height: 80vh;  
+        }
+        .work-content{
+            border: 1px solid grey;
+            width: 27%;
+            margin: auto 30px;
+            border-radius: 5px;
+        }
+        .work-content img{
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            width: 405px;
+        }
+        .work-content p{
+            padding: 50px 20px 15px 12px;
+            font-size: 14px;
+            font-weight: lighter;
+            text-align: justify;
+        }
+        .work-content button{
+            color: gray;
+            background-color: rgb(19, 18, 18);
+            /* border: 5px solid gray; */
+            margin: 10px 0px;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            border: none;
+
+        }
+
+
+        /* this is the styling for testimonial-section */
+        #testimonial-section{
+            text-align: center;
+            padding: 10px 0px;
+            margin-top: 40px;
+            background-color: black;
+            border-top: solid 2px rgb(52, 52, 107);
+        }
+        .test-container{
+            display: flex;
+            justify-content: center;
+            height: 70vh;
+        }
+
+        .test-content{
+            width: 50%;
+            margin: auto;
+        }
+
+        .test-word{
+            text-align: justify;
+            padding: 0px 15px;
+            margin-left: 35px;
+        }
+
+        .test-word p{
+            color: gray;
+            padding: 5px 0px;
+        }
+
+        .test-word button{
+            border: none;
+            border-radius: 3px;
+            padding: 13px 23px;
+            width: 200px;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+            background-color:rgb(19, 102, 19);
+            cursor: pointer;
+        }
+
+        .test-img img{
+            border-radius: 50%;
+        }
+        footer{
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        color: rgb(50, 49, 49);
+        padding: 20px;
+        margin-top: 40px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+      </header>
+    
+      <nav>
+        <a href="#home-section" onclick="navigateTo('home-section')">Home</a>
+        <a href="#skills-section" onclick="navigateTo('skills-section')">Services</a>
+        <a href="#work-section" onclick="navigateTo('work-section')">Work</a>
+        <a href="#testimonial-section" onclick="navigateTo('testimonial-section')">Testmonial</a>
+      </nav>
+      </header>
+    <section id="home-section">
+        <div class="container">
+            <div class="same-margin  div-1">
+                <div class="content">
+                    <h1>Andy <img src="th.jpeg" alt=""><span>Ishimwe</span></h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi optio eius adipisci eligendi reiciendis vel ipsam, labore neque nesciunt, itaque excepturi fugit tenetur eos, iure sit blanditiis non assumenda voluptate.</p>
+                </div>
+            </div>
+            <div class="same-margin  div-2">
+               <img src="th.jpeg" height="340" width="300" alt="user image">
+            </div>
+        </div>
+    </section>
+    <section id="skills-section">
+        <h1>specialized in</h1>
+        <div class="skills-container">
+            <div class="skills-card skill-1">
+                <h2>skill 1</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptatibus quod culpa natus expedita officia iure dolor facilis. Dolor architecto ipsum et. </p>
+            </div>
+    
+            <div class="skills-card skill-2">
+                <h2>skill 1</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptatibus quod culpa natus expedita officia iure dolor facilis. Dolor architecto ipsum et. </p>
+            </div>
+    
+            <div class="skills-card skill-3">
+                <h2>skill 1</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptatibus quod culpa natus expedita officia iure dolor facilis. Dolor architecto ipsum et. </p>
+            </div>
+        </div>
+ 
+    </section>
+
+    <section id="work-section">
+        <h1>worked On</h1>
+        <div class="work-container">
+            <div class="work-content work-1">
+                <img src="istockphoto-1944772735-612x612.jpg" height="334"  alt="works">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi optio eius adipisci eligendi reiciendis vel ipsam, labore neque nesciunt, itaque excepturi fugit.</p>
+                <button>Continue Reading</button>
+            </div>
+
+            <div class="work-content work-2">
+                <img src="istockphoto-1450789031-612x612.jpg" height="334" alt="works">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi optio eius adipisci eligendi reiciendis vel ipsam, labore neque nesciunt, itaque excepturi fugit.</p>
+                <button>Continue Reading</button>
+            </div>
+
+            <div class="work-content work-3">
+                <img src="istockphoto-1626852668-612x612.jpg" height="334" alt="works">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi optio eius adipisci eligendi reiciendis vel ipsam, labore neque nesciunt, itaque excepturi fugit.</p>
+                <button>Continue Reading</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonial-section">
+        <h1>Testimonial</h1>
+        <div class="test-container">
+            <div class="test-content test-word"> 
+                <h1>John Doe</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Ab quisquam voluptatem,
+                     accusantium quos obcaecati, doloremque voluptas quam,
+                      quae expedita assumenda odit provident! Tempora quidem 
+                      doloremque voluptatem veritatis reprehenderit, iure 
+                      voluptatum!</p>
+                      <button>Read More ></button>
+            </div>
+             <div class="test-content test-img">
+                <img src="./female member.webp" width="300" height="300" alt="Testimonial image">
+             </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>
+            &copy;2012 - John Doe
+        </p>
+    </footer>
+</body>
+</html>

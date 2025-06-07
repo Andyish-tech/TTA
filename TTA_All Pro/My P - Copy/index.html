@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KWIZERA David - Portfolio</title>
+    <style>
+        /* Reset and basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background-color: #000000;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Header */
+        header {
+            background: #0000004b;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #032264 3px solid;
+            top: 0;
+            position: sticky;
+        }
+        header a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header a:hover {
+            color: #00e1ff;
+            transition: 0.3s;
+        }
+
+        /* Showcase */
+        #showcase {
+            background: #000000;
+            color: #ecf0f1;
+            min-height: 400px;
+            text-align: center;
+        }
+        #showcase .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 50px 0;
+        }
+        #showcase .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #291972;
+            overflow: hidden;
+        }
+        #showcase .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #showcase .profile-text {
+            max-width: 500px;
+        }
+        #showcase h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        #showcase p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        #showcase .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1a2e66;
+            color: #ecf0f1;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        #showcase .cta-button:hover {
+            background: #0c072b;
+        }
+
+        /* About */
+        #about {
+            padding: 40px 0;
+            background: #121213;
+        }
+        #about h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #about p {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Skills */
+        #skills {
+            padding: 40px 0;
+            background: #000000;
+            color: #ecf0f1;
+        }
+        #skills h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .skill-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .skill {
+            background: #071118;
+            padding: 20px;
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            box-shadow: 6px 6px 6px rgba(52, 112, 131, 0.445);
+        }
+        .skill:hover {
+            transform: translateY(-5px);
+        }
+        .skill h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Portfolio */
+        #portfolio {
+            padding: 40px 0;
+            background: #000000;
+        }
+        #portfolio h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #d6d6d6;
+        }
+        .project-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .project {
+            background: #fffdfd1a;
+            padding: 20px;
+            width: 300px;
+            margin: 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        .project:hover {
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .project h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        #testimonials {
+            padding: 40px 0;
+            background: #000000;
+            color: #ecf0f1;
+        }
+        #testimonials h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .testimonial-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .testimonial {
+            background: #071118;
+            padding: 20px;
+            width: 45%;
+            margin: 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 6px 6px 6px rgba(52, 112, 131, 0.445);
+        }
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .testimonial h4 {
+            color: #ffffff;
+        }
+
+        /* Responsive design for testimonials */
+        @media (max-width: 768px) {
+            .testimonial {
+                width: 80%;
+            }
+        }
+
+        /* Contact */
+        #contact {
+            padding: 40px 0;
+            background: #000000;
+            color: #ecf0f1;
+        }
+        #contact h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #1b1366;
+            color: #ecf0f1;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .contact-form button:hover {
+            background: #140b35;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            background: #121213;
+            color: #ecf0f1;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header #branding,
+            header nav,
+            header nav li {
+                float: none;
+                text-align: center;
+                width: 100%;
+            }
+            header {
+                padding-bottom: 20px;
+            }
+            #showcase .container {
+                flex-direction: column;
+            }
+            #showcase .profile-image {
+                margin-bottom: 20px;
+            }
+            .skill, .project {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>KWIZERA David</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#showcase">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#testimonials">Testimony</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <div class="profile-image">
+                <img src="Mine2.png" alt="KWIZERA David">
+            </div>
+            <div class="profile-text">
+                <h1>KWIZERA David</h1>
+                <p>Innovative Software Developer</p>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm a passionate developer with a knack for creating elegant solutions through code. With a strong foundation in software development and a keen eye for detail, I strive to build applications that not only meet but exceed expectations. My journey in tech is driven by an insatiable curiosity and a desire to push the boundaries of what's possible in the digital realm.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skill-container">
+                <div class="skill">
+                    <h3>Front-end Development</h3>
+                    <p>HTML, CSS, JavaScript, React</p>
+                </div>
+                <div class="skill">
+                    <h3>Back-end Development</h3>
+                    <p>Node.js, Express, Python, Django</p>
+                </div>
+                <div class="skill">
+                    <h3>Database Management</h3>
+                    <p>MySQL, MongoDB, PostgreSQL</p>
+                </div>
+                <div class="skill">
+                    <h3>DevOps</h3>
+                    <p>Git, Docker, CI/CD, AWS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="project-container">
+                <div class="project">
+                    <img src="P2.png" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>A brief description of the project and the technologies used.</p>
+                </div>
+                <div class="project">
+                    <img src="P3.webp" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>A brief description of the project and the technologies used.</p>
+                </div>
+                <div class="project">
+                    <img src="P1.png" alt="Project 3">
+                    <h3>Project 3</h3>
+                    <p>A brief description of the project and the technologies used.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <img src="Armand.png" alt="Armand">
+                    <p>"KWIZERA David is an exceptional developer. His attention to detail and problem-solving skills are unmatched. It was a pleasure working with him on our project."</p>
+                    <h4>Armand Rukizangabo</h4>
+                    <p>CEO, Tech Innovations</p>
+                </div>
+                <div class="testimonial">
+                    <img src="Gisubizo.png" alt="Jane Smith">
+                    <p>"I was impressed by David's ability to tackle complex challenges and deliver high-quality solutions. His expertise in both front-end and back-end development made him an invaluable asset to our team."</p>
+                    <h4>Gisubizo</h4>
+                    <p>CTO, Digital Solutions Inc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form class="contact-form">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 KWIZERA David. All rights reserved.</p>
+    </footer>
+</body>
+</html>

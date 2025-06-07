@@ -1,0 +1,313 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: calibri, sans-serif;
+    line-height: 1.6;
+    color: #f4f4f4;
+    background-color: black;
+}
+
+a {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+nav ul li {
+    margin: 0 16px;
+}
+
+nav ul li a {
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 96px 16px 16px;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    color: #f9ffff;
+}
+
+
+#home {
+    text-align: center;
+    padding: 64px 0;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 32px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid #0000ff1e;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#home h1 {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+#home h2 {
+    font-size: 24px;
+    color: #ddd;
+    margin-bottom: 16px;
+}
+
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.skill {
+    flex: 1 1 300px;
+    display: block;
+    align-items: center;
+}
+/* Skills list styles */
+.skill-1 {
+    background-color: #02021b;
+    width: 340px;
+    border-radius: 10px;
+    height: 300px;
+}
+.skill-1 h2 {
+    text-align: center;
+    margin-top: 10px;
+    background-color: black;
+}
+.skill-1 p {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.skill-2 {
+    background-color: #02021b;
+    width: 340px;
+    border-radius: 10px;
+    height: 300px;
+}
+.skill-2 h2 {
+    text-align: center;
+    margin-top: 10px;
+    background-color: black;
+}
+.skill-2 p {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.skill-3 {
+    background-color: #02021b;
+    width: 340px;
+    border-radius: 10px;
+    height: 300px;
+}
+.skill-3 h2 {
+    text-align: center;
+    margin-top: 10px;
+    background-color: black;
+}
+.skill-3 p {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+/* End of Skills list styles */
+
+
+.skill span {
+    width: 100px;
+    margin-right: 16px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar div {
+    height: 100%;
+    background-color: #235392;
+}
+
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.project {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    font-family: calibri;
+    background-color: #1f205c;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: 250px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 16px;
+}
+
+.btn:hover {
+    background-color: #003fee59;
+}
+
+
+.contact-container {
+    display: flex;
+    gap: 32px;
+}
+
+form {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+}
+
+input, textarea {
+    height: 60px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #f4f4f4;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: calibri;
+    font-weight: bold;
+}
+
+textarea {
+    height: 70px;
+    font-family: calibri;
+    font-size: 14px;
+    border: white 1px solid;
+}
+
+.contact-info {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    border-radius: 5px;
+}
+
+.testimony h2 {
+    margin-bottom: 10px;
+}
+
+#mytestimonial p {
+    width: 400px;
+}
+
+.testimony-giver {
+    display: flex;
+}
+
+.testimony-giver img {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid #0000ff1e;
+}
+
+.testimony p {
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.testimony h3 {
+    margin-top: 150px;
+    margin-right: 20px;
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.project img {
+    width: 530px;
+    height: 300px;
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+}

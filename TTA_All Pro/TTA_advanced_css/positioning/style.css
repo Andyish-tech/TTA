@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+}
+.content{
+    border: 1px solid blue;
+    margin: 5px 20px;
+    /* width: 30%; */
+    padding: 0px 5px ;
+}
+.content-2{
+    border: 1.5px solid green;
+    background-color: aqua;
+}
+
+.position-static{
+    
+    position: static;
+    top: 12px;
+    right: 67px;
+}
+
+.position-relative{
+    border: 1.5px solid green;
+    background-color: aqua;
+    position: relative;
+    top: 30px;
+    left: 45px;
+}
+.position-Absolute{
+    position: absolute;
+    /* top: 50px; 
+    bottom: 30px;  */
+
+}
+.position-sticky{
+    position: sticky;
+    top: 0;
+}
+
+.position-fixed{
+    /* position: fixed; */
+    top: 20px;
+    right: 40px;
+}

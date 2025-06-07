@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        font-family: "Arial", sans-serif; 
+        background-color: #1f1f2f;
+        color: #e0e0e0;
+    }
+header{
+    background-color: #1f1f3f;
+    text-align: center;
+    border-bottom: 3px solid #ff9800;
+    color: #ffffff;
+    
+}
+header h1{
+    font-size: 2.2em;
+    color: #ff9800;
+}
+.container {
+    max-width: 1200px;
+    margin: 20px;
+    padding: 20px;
+    }
+
+.main-container {
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.destination{
+    background-color: #2a2a3f;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.destination h2{
+    margin: 10px;
+    color: #ff9800;
+
+}
+
+.destination img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.btn{
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+}
+#rwanda-btn{
+    background-color: #4caf50;
+}
+#paris-btn{
+    background-color: #f44336;
+}
+#Nyc-btn{
+    background-color: #2196f3;
+}
+#tokyo-btn{
+    background-color: #ffeb3b;
+}
+
+.sidebar{
+    background-color: #212121;
+    padding: 20px;
+    /* width: 100%; */
+    color: #ffffff;
+    text-align: left;
+}
+
+.sidebar h3{
+    color: white;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+.sidebar ul{
+    padding-left: 20px;
+}
+
+footer{
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    margin-top: 12px;
+    border-top: 2px solid;
+    border-color: #e0e0e0;
+}
+</style>
+
+<body>
+    <header>
+        <h1>Explore The World</h1>
+        <p>Discover Amazing Travel Destination</p>
+
+
+    </header>
+    <div class="container">
+        <div class="main-container">
+
+            <div class="destination">
+                <h2>Kigali, Rwanda</h2>
+                <img src="Img/cityscape-things-to-do-in-kigali-rwanda_44e57bd0bf.jpeg" alt=" Kigali city">
+                <p>
+                    Explore the breathtaking landscapes and wildlife of the land of Thousand Hills
+                </p>
+                <button class="btn" id="rwanda-btn">Explore Kigali</button>
+
+            </div>
+
+           
+
+                <div class="destination">
+                    <h2>Pris, France</h2>
+                    <img src="Img/538735-architecture-cities-france-light-towers-monuments-night-panorama-panoramic-paris-urban-temples.jpg" alt=" Paris">
+                    <p>
+                        Experience the Romance and Beauty of the city of lights
+                    </p>
+                    <button class="btn" id="paris-btn">Explore Paris</button>
+                    
+                </div>
+
+            
+
+                    <div class="destination">
+                        <h2>New York, USA</h2>
+                        <img src="Img/CORT-NYC-StudyUSA07.jpg" alt=" NYC">
+                        <p>
+                            Visit the busling street of times Square and Central Park
+                        </p>
+                        <button class="btn" id="Nyc-btn">Explore New York</button>
+                        
+                    </div>
+
+            
+
+                        <div class="destination">
+                            <h2>Tokyo, Japon</h2>
+                            <img src="Img/wp2971763.jpg" alt=" Tokyo">
+                            <p>
+                                Dive into the vibrant culture and cuisine of Tokyo
+                            </p>
+                            <button class="btn" id="tokyo-btn">Explore Tokyo</button>
+                            
+                        </div>
+            
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <h2>Travel Tips</h2>
+        <ul>
+            <li>Pack light</li>
+            <li>Stay hydarted</li>
+            <li>Learn Basic local language</li>
+            <li>Keep your Document Safe<</li>
+        </ul>
+    </div>
+    <footer>
+        &copy;2024 Explore the world, Alright reserve
+    </footer>
+    
+</body>
+</html>

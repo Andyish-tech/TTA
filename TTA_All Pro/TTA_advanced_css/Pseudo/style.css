@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navigation {
+    background-color: #000000;
+    text-align: center;
+    padding: 10px 0px;
+}
+ul li {
+    display: inline;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0px 10px;
+}
+
+.navigation a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.form {
+    margin: 15px;
+}
+
+.form input {
+    border: 2px dashed red;
+}
+
+.form input:focus {
+    border: none;
+    background-color: blue;
+    /* border: 2px solid dashed red; */
+}
+
+.navigation ul li:nth-child(even) {
+    background-color: blue;
+}
+
+#pseudo-elements p::before{
+    content: "Note: ";
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#pseudo-elements p::after {
+    content: "(End of note)";
+    font-style: italic;
+    text-transform: uppercase;
+}

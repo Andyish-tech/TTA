@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.home-container {
+    height: 100vh;
+    background-image: url("./images/image\ 23.png");
+    background-position: center;
+    color: #ffffff;
+}
+
+.home-container p {
+    text-align: center;
+    padding: 10px 0px;
+    font-size: 50px;
+    font-weight: 548;
+}
+
+
+.header {
+    display: flex;
+}
+
+/* 25:39 the minute and seconds where we reached in video lecture day 2 */ 

@@ -1,0 +1,108 @@
+.heading{
+    text-align: center;
+}
+.heading p{
+    color: gray;
+}
+.About-button {
+    font-size: 15px;
+    padding: 12px;
+    width: 100px;
+    background-color: blue;
+    border-radius: 2px;
+    color: white;
+    border: none;
+}
+
+.Contact-button {
+    font-size: 15px;
+    padding: 12px;
+    width: 100px;
+    background: none;
+    border: 1px solid gray;
+}
+
+.members img{
+    width: 250px; 
+    height: 250px; 
+    border-radius: 10px;
+}
+.members {
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 10px;
+    
+}
+.member {
+    justify-content: center;
+    display: flex;
+}
+
+@media(max-width:600px) {
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: rgb(180, 95, 95);
+    }
+    .heading{
+        text-align: center;
+    }
+    .member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .members{
+        width: 70%;
+    }
+
+    .members img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media(min-width:600px) and (max-width:768px) {
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: rgb(2, 77, 2);
+
+    }
+    
+    .heading {
+        text-align: center;
+    }
+    .member{
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+}
+
+@media(min-width:768px) and (max-width:992px) {
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: black;
+    }
+
+    h1{
+        color: whitesmoke;
+    }
+    p{
+        color: whitesmoke;
+    }
+    .heading {
+        text-align: center;
+    }
+    .member {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    button{
+        color: white;
+    }
+}

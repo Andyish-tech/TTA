@@ -1,0 +1,13 @@
+
+<catalog>
+  <book id="1">
+    <title>The Art of Code</title>
+    <author>Gisubizo</author>
+    <year>2022</year>
+  </book>
+  <book id="2">
+    <title>Learning JavaScript</title>
+    <author>James</author>
+    <year>2021</year>
+  </book>
+</catalog>
