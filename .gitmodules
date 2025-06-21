@@ -1,0 +1,6 @@
+[submodule "TTA_All Pro/TTA_Portifolio_v1"]
+	path = TTA_All Pro/TTA_Portifolio_v1
+	url = https://github.com/Andyish-tech/TTA_Portifolio_v1.git
+[submodule "TTA_All Pro/Tech Tonic Africa/TECHTONICAFRICA"]
+	path = TTA_All Pro/Tech Tonic Africa/TECHTONICAFRICA
+	url = https://github.com/Andyish-tech/TECHTONICAFRICA.git
