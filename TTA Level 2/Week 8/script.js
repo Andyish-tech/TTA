@@ -2,18 +2,19 @@ const products = [
   {
     name: "Laptop",
     price: "$899",
-    image: ""
+    image: "https://cdn.thewirecutter.com/wp-content/media/2024/11/cheapgaminglaptops-2048px-7981.jpg?auto=webp&quality=75&width=980&dpr=2"
   },
   {
     name: "Headphones",
     price: "$199",
-    image: "https://via.placeholder.com/200x150?text=Headphones"
+    image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MQTP3?wid=2000&hei=2000&fmt=jpeg&qlt=90&.v=MVJhVmI0YmhYQVJ5Y0VDdzF1YWp3MmorYzFkTG5HaE9wejd5WUxYZjRMOHoveDdpQVpwS0ltY2w2UW05aU90TzVtaW9peGdOaitwV1Nxb1VublZoTVE"
   },
   {
-    name: "Camera",
-    price: "$599",
-    image: "C:\Users\mario\OneDrive\Desktop\TTA\TTA Level 2\Week 8\Images\digital-photography.jpg"
-  }
+  name: "Camera",
+  price: "$599",
+  image: "https://www.dpreview.com/files/p/articles/6269402639/canon_eosr8.jpeg"
+}
+
 ];
 
 let cartCount = 0;
